@@ -101,13 +101,14 @@ public class RedesController {
 				BufferedReader buffer = new BufferedReader(leitura);
 				String linha = buffer.readLine();
 				while (linha != null) {
-					if (linha.toLowerCase().contains("adaptador") | linha.toLowerCase().contains("adaptador")) {
-						nomeAdp = linha;
-						nomeAdp = nomeAdp.replace(":", " ");
+					if (linha.toLowerCase().contains("flags")) {
+						String [] linhaVetor = linha.split(":");
+						nomeAdp = linhaVetor [0];
 					}
-					if (linha.toLowerCase().contains("ipv4")) {
-						linha = linha.replace("‡","ç");
-						System.out.println( "Nome do adaptador: " + nomeAdp + "\n" + linha);
+					if (linha.toLowerCase().contains("inet")) {
+						String [] linhaVetor = linha.split(" ");
+						linha = linhaVetor [0] + linhaVetor [1];
+						System.out.println( "Nome do adaptador: " + nomeAdp + "\n" + "Endereço ipv4: " + linha);
 						System.out.println("\n");
 					}
 					linha = buffer.readLine();
