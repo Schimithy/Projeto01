@@ -44,18 +44,21 @@ public class ProcessosController {
 		
 		String PID = " ";
 		String Nome = " ";
+		String task = (JOptionPane.showInputDialog("digite o PID ou o nome do processo"));
 		if(sysop == 1) {
 			PID = "TASKKILL /PID ";
 			Nome = "TASKKILL /IM ";
+			if (task.contains(".exe") == false) {
+				task = task + ".exe";
+				}
 		}
 		else {
 			PID ="kill ";
 			Nome = "pkill ";
+			if(task.contains(" ")) {
+				task = task.replace(" ", "_");
+			}
 		}
-			String task = (JOptionPane.showInputDialog("digite o PID ou o nome do processo"));
-			if (task.contains(".exe") == false) {
-				task = task + ".exe";
-				}
 			StringBuffer buffer = new StringBuffer();
 			try {
 				int numPID = Integer.parseInt(task);
