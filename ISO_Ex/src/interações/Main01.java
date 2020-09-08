@@ -18,7 +18,7 @@ public class Main01 {
 			sysop = 2;
 		}
 		if(sysop == 0) {
-			System.err.println("Sistema operacional não reconhecido");
+			System.err.println("Sistema operacional nao reconhecido");
 			sysop = 3;
 		}
 		
@@ -34,7 +34,7 @@ public class Main01 {
 					break;
 					case 9: System.out.println("Finalizando");
 					break;
-					default: JOptionPane.showInputDialog("Opção Invalida");
+					default: JOptionPane.showInputDialog("Opcao Invalida");
 				}
 			}
 		}
