@@ -26,9 +26,9 @@ public class Main01 {
 			int opc = 0;
 			while (opc != 9) {
 		
-				opc = Integer.parseInt(JOptionPane.showInputDialog("1 - IP  \n 2 - Ping \n 9 - Finaliza\""));
+				opc = Integer.parseInt(JOptionPane.showInputDialog("1 - IP  \n 2 - Ping \n 9 - Finalizar"));
 				switch(opc) {
-					case 1: controller.IP(sysop, opc) ;
+					case 1: controller.IP(sysop, opc);
 					break;
 					case 2: controller.Ping(sysop, opc);
 					break;
